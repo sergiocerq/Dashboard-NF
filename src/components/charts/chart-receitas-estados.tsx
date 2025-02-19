@@ -266,7 +266,7 @@ export function ChartReceitaPorEstado() {
                     maximumFractionDigits: 1,
                     minimumFractionDigits: 1,
                   })}{' '}
-                  Trilhões
+                  Bilhões
                 </span>
               </button>
             );

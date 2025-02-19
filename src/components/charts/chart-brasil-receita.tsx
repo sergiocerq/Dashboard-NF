@@ -6,16 +6,16 @@ import {
   CardHeader,
   CardTitle,
 } from '../ui/card';
-import BrasilSVG from '../../assets/brasil-vendas.svg';
+import BrasilSVG from '../../assets/brasil-compras.svg';
 import { TooltipHeatMapBrasil } from './legenda-graficos';
 
-export function ChartBrasilVendas() {
+export function ChartBrasilCompras() {
   return (
     <Card className={'col-span-4'}>
       <CardHeader>
-        <CardTitle>Vendas por Estado</CardTitle>
+        <CardTitle>Receita por Estado</CardTitle>
         <CardDescription>
-          Mapa do Brasil com as vendas por estado
+          Mapa do Brasil com as receitas por estado
         </CardDescription>
       </CardHeader>
       <CardContent>
@@ -29,27 +29,27 @@ export function ChartBrasilVendas() {
         <div className="grid w-full justify-center text-foreground md:grid-cols-1 [&>div]:relative [&>div]:flex [&>div]:h-[137px] [&>div]:items-center mx-auto [&>div]:justify-center [&>div]:p-4">
           <div>
             <TooltipHeatMapBrasil
-              label="Legenda - Vendas por Estado"
+              label="Legenda - Compras por Estado"
               payload={[
                 {
                   name: 'Muito Alto',
                   value: 'Acima de 100 milhões',
-                  fill: '#065f46',
+                  fill: '#5b21b6',
                 },
                 {
                   name: 'Alto',
                   value: 'Entre 50 e 100 milhões',
-                  fill: '#059669',
+                  fill: '#7c3aed',
                 },
                 {
                   name: 'Médio',
                   value: 'Entre 10 e 50 milhões',
-                  fill: '#34d399',
+                  fill: '#a78bfa',
                 },
                 {
                   name: 'Baixo',
                   value: 'Abaixo de 10 milhões',
-                  fill: '#a7f3d0',
+                  fill: '#ddd6fe',
                 },
                 { name: 'Sem Resultados', value: 'N/A', fill: '#999999' },
               ]}

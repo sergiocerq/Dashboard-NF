@@ -30,8 +30,9 @@ import { NumberTicker } from '../components/ui/number-ticker';
 import { ChartValorOperacao } from '../components/charts/chart-valor-operacao';
 import { ChartlProdutosMaisComprados } from '../components/charts/chart-produtos-mais-comprados';
 import { ChartReceitaPorEstado } from '../components/charts/chart-receitas-estados';
-import { ChartBrasilCompras } from '../components/charts/chart-brasil-compras-svg';
+import { ChartBrasilCompras } from '../components/charts/chart-brasil-receita';
 import { ChartBrasilVendas } from '../components/charts/chart-brasil-vendas';
+import { TabTabelasDashboard } from './tabelas-dashboard/tab-tabelas-dashboard';
 
 export const DashboardNf = () => {
   return (
@@ -63,22 +64,11 @@ export const DashboardNf = () => {
               <h2 className="text-3xl font-bold tracking-tight">
                 Painel Inicial
               </h2>
-              {/*<div className="flex items-center space-x-2">*/}
-              {/*  <DateRangePicker />*/}
-              {/*</div>*/}
             </div>
             <Tabs defaultValue="geral" className="space-y-4">
               <TabsList>
                 <TabsTrigger value="geral">Geral</TabsTrigger>
-                <TabsTrigger value="trabalhista" disabled>
-                  Tempo
-                </TabsTrigger>
-                <TabsTrigger value="penal" disabled>
-                  Geográfico
-                </TabsTrigger>
-                <TabsTrigger value="civil" disabled>
-                  Partes Envolvidas
-                </TabsTrigger>
+                <TabsTrigger value="tabelas">Tabelas</TabsTrigger>
               </TabsList>
               <TabsContent value="geral" className="space-y-4">
                 <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-4">
@@ -92,7 +82,7 @@ export const DashboardNf = () => {
                     <CardContent>
                       <div className="text-2xl font-bold">
                         R$ <NumberTicker value={22.8} decimalPlaces={2} />{' '}
-                        Trilhões{' '}
+                        Bilhões{' '}
                       </div>
                       <p className="text-xs text-muted-foreground">
                         Valor total de vendas líquidas
@@ -109,7 +99,7 @@ export const DashboardNf = () => {
                     <CardContent>
                       <div className="text-2xl font-bold">
                         R$ <NumberTicker value={1.67} decimalPlaces={2} />{' '}
-                        Trilhões
+                        Bilhões
                       </div>
                       <p className="text-xs text-muted-foreground">
                         Valor total de receita dos estados
@@ -119,32 +109,33 @@ export const DashboardNf = () => {
                   <Card>
                     <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
                       <CardTitle className="text-sm font-medium">
-                        Movimentações Recentes
+                        Vendas de Salvador
                       </CardTitle>
                       <Layers3 className="h-4 w-4 text-muted-foreground" />
                     </CardHeader>
                     <CardContent>
                       <div className="text-2xl font-bold">
-                        +<NumberTicker value={3200} />
+                        R$ <NumberTicker value={228} decimalPlaces={2} />{' '}
+                        Milhões
                       </div>
                       <p className="text-xs text-muted-foreground">
-                        +17.1% em comparação ao mês passado
+                        Valor total de vendas de Salvador
                       </p>
                     </CardContent>
                   </Card>
                   <Card>
                     <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
                       <CardTitle className="text-sm font-medium">
-                        Tempo Médio Resolução
+                        Estados com Maior Venda
                       </CardTitle>
                       <Clock className="h-4 w-4 text-muted-foreground" />
                     </CardHeader>
                     <CardContent>
                       <div className="text-2xl font-bold">
-                        + <NumberTicker value={180} /> dias
+                        + <NumberTicker value={2} /> estados
                       </div>
                       <p className="text-xs text-muted-foreground">
-                        Aproximadamente 6 meses
+                        Superaram os R$ 100 milhões em vendas
                       </p>
                     </CardContent>
                   </Card>
@@ -156,6 +147,9 @@ export const DashboardNf = () => {
                   <ChartBrasilVendas />
                   <ChartReceitaPorEstado />
                 </div>
+              </TabsContent>
+              <TabsContent value="tabelas" className="space-y-4">
+                <TabTabelasDashboard />
               </TabsContent>
             </Tabs>
           </div>

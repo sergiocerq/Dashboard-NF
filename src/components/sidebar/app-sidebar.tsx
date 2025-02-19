@@ -14,6 +14,7 @@ import {
   HelpCircle,
   MousePointerClick,
   Settings2,
+  TableCellsSplit,
 } from 'lucide-react';
 import { NavProjects } from './nav-projects';
 import { NavUser } from './nav-user';
